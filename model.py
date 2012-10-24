@@ -26,7 +26,7 @@ def authenticate(db, email, password):
 
 def new_task(db, title, user_id):
     c = db.cursor()
-    query = """INSERT INTO Tasks VALUES (NULL, ?, ?)"""
+    query = """INSERT INTO Tasks VALUES (NULL, ?, NULL, NULL, ?)"""
     result = c.execute(query, (title, user_id))
     db.commit()
     return result.lastrowid
